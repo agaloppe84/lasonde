@@ -8,6 +8,7 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'redis'
+gem 'active_record-acts_as'
 
 gem 'sass-rails'
 gem 'jquery-rails'
