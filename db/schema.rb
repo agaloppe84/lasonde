@@ -11,10 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160229152355) do
+ActiveRecord::Schema.define(version: 20160229154521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "iterations", force: :cascade do |t|
+    t.integer  "number"
+    t.string   "label"
+    t.integer  "question_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "iterations", ["question_id"], name: "index_iterations_on_question_id", using: :btree
+
+  create_table "questions", force: :cascade do |t|
+    t.integer  "survey_id"
+    t.string   "label"
+    t.string   "kind"
+    t.integer  "rank"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "questions", ["survey_id"], name: "index_questions_on_survey_id", using: :btree
+
+  create_table "surveys", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "surveys", ["user_id"], name: "index_surveys_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -34,4 +64,7 @@ ActiveRecord::Schema.define(version: 20160229152355) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "iterations", "questions"
+  add_foreign_key "questions", "surveys"
+  add_foreign_key "surveys", "users"
 end
