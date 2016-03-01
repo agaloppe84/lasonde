@@ -1,4 +1,4 @@
 class TextAnswer < ActiveRecord::Base
   belongs_to :respondent
-  act_as :answer
+  acts_as :answer
 end

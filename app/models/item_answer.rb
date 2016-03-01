@@ -1,5 +1,5 @@
 class ItemAnswer < ActiveRecord::Base
   belongs_to :respondent
   belongs_to :item
-  act_as :answer
+  acts_as :answer
 end
