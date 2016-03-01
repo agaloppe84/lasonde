@@ -1,0 +1,19 @@
+<ul>
+  <% @questions.each do |question| %>
+    <li>
+      <% if policy(question).show? %>
+        <%= "(#{question.rank}) #{question.label}" %> <br>
+        <%= question.kind %>
+      <% end %>
+      <% if policy(question).update? %>
+        <%= link_to "Edit", edit_survey_question_path(@survey, question) %>
+      <% end %>
+      <% if policy(question).destroy? %>
+        <%= link_to "Destroy", survey_question_path(@survey, question), method: :delete, data: { confirm: "Are you sure ?" } %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+<% if policy(Question).create? %>
+  <%= link_to "Add a question", new_survey_question_path(@survey) %>
+<% end %>
