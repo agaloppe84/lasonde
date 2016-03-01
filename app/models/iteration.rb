@@ -1,4 +1,4 @@
 class Iteration < ActiveRecord::Base
   belongs_to :question
-  has_many :iterations
+  has_many :answers
 end
