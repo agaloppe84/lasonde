@@ -11,6 +11,7 @@
       <% if policy(question).destroy? %>
         <%= link_to "Destroy", survey_question_path(@survey, question), method: :delete, data: { confirm: "Are you sure ?" } %>
       <% end %>
+      <% render 'items/index', question: question %>
     </li>
   <% end %>
 </ul>
