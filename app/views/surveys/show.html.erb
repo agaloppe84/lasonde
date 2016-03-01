@@ -1,3 +1,6 @@
 <%= @survey.title %>
 
+<%= render "questions/index", survey: @survey %>
+
+
 <%= link_to "Mes études", surveys_path %>

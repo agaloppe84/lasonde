@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :surveys
+
   root 'pages#home'
+
+  resources :surveys do
+    resources :questions, only: [ :new, :create, :edit, :update, :destroy ]
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
