@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
     @item.rank = @question.items.count + 1
     authorize @item
     if @item.save
-      redirect_to question_path(@question)
+      redirect_to survey_path(@question.survey)
     else
       render :new
     end
@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to question_path(@question)
+      redirect_to survey_path(@question.survey)
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
-    redirect_to question_path(@question)
+    redirect_to survey_path(@question.survey)
   end
 
   private
