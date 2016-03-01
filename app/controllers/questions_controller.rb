@@ -5,6 +5,7 @@ class QuestionsController < ApplicationController
   def new
     @question = @survey.questions.new
     authorize @question
+    @question.iterations.create(number: @question.iterations.count + 1)
   end
 
   def create
