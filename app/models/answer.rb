@@ -1,4 +1,4 @@
 class Answer < ActiveRecord::Base
-  belongs_to :iteration
   actable
+  belongs_to :iteration
 end
