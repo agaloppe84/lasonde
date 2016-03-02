@@ -32,6 +32,4 @@ group :production do
   gem 'rails_12factor'
 end
 
-source 'https://rails-assets.org' do
-  gem 'rails-assets-bootstrap-vertical-tabs'
-end
+
