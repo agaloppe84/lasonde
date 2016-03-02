@@ -6,11 +6,10 @@ class Question < ActiveRecord::Base
   has_many :items, dependent: :destroy
   validates :label, presence: true, allow_blank: false
   validate :kind_is_in_kinds
-  #validates :rank, length: { maximum: 10 }
   validate :number_of_questions_cannot_excess_ten
 
   def self.kinds
-    ["single", "multi", "open-ended text", "stars"]
+    ["single", "multi", "open-text", "stars", "open-numeric", "slider", "grid-single", "grid-multi"]
   end
 
   def kind_is_in_kinds
