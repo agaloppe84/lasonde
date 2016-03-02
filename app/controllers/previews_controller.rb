@@ -3,7 +3,7 @@ class PreviewsController < ApplicationController
 
   def show
     @questions = @survey.questions
-
+    @item_answer = ItemAnswer.new
   end
 
   private
