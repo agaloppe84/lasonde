@@ -9,7 +9,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = @survey.questions.build(question_params)
-    @question.rank = @survey.questions.count + 1
+    @question.rank = @survey.questions.size
     authorize @question
     if @question.save
       @question.iterations.create(number: 1)
