@@ -1,20 +1,29 @@
-<ul>
-  <% @questions.each do |question| %>
-    <li>
+<% if policy(Question).create? %>
+  <%= link_to "Add a question", new_survey_question_path(@survey) %>
+<% end %>
+<ul class="nav nav-pills nav-stacked col-md-3" >
+  <% @questions.each_with_index do |question, index| %>
+    <li><a href="#<%=index.to_s %>"data-toggle="pill">
       <% if policy(question).show? %>
-        <%= "(#{question.rank}) #{question.label}" %> <br>
+        <%= "(#{question.rank}) #{question.label} - " %>
         <%= question.kind %>
       <% end %>
+    </a>
+  </li>
+  <% end %>
+</ul>
+<div class="tab-content col-md-9">
+<% @questions.each_with_index do |question, index| %>
+    <div class="tab-pane fade" id="<%=index.to_s%>">
       <% if policy(question).update? %>
         <%= link_to "Edit", edit_survey_question_path(@survey, question) %>
       <% end %>
       <% if policy(question).destroy? %>
         <%= link_to "Destroy", survey_question_path(@survey, question), method: :delete, data: { confirm: "Are you sure ?" } %>
       <% end %>
-      <%= render 'items/index', question: question %>
-    </li>
-  <% end %>
-</ul>
-<% if policy(Question).create? %>
-  <%= link_to "Add a question", new_survey_question_path(@survey) %>
-<% end %>
+        <%= render 'items/index', question: question %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
