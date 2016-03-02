@@ -1,16 +1,19 @@
-<% @questions.each do |question| %>
-  <h4><%= question.label %></h4>
+<div class="container">
 
-  <% question.iterations.each do |iteration| %>
-    <% answer = iteration.answers.new %>
-    <% item_answer = ItemAnswer.new %>
+  <% @questions.each do |question| %>
+    <div class="question">
+      <h4><%= question.label %></h4>
 
-    <%= simple_form_for [question, item_answer] do |f| %>
+      <% question.iterations.each do |iteration| %>
+        <% answer = iteration.answers.new %>
+        <% item_answer = ItemAnswer.new %>
 
-      <%= f.association :item, as: :check_boxes, collection: question.items(order: 'rank'), label_method: :label, label: false %>
-      <%= f.button :submit, "Suivant", remote: false  %>
-    <% end %>
+        <%= simple_form_for [question, iteration, item_answer] do |f| %>
+          <%= f.association :item, as: :check_boxes, collection: question.items(order: 'rank'), label_method: :label, label: false, include_hidden: false %>
+          <%= f.button :submit, "Suivant", remote: true, class: "btn btn-primary"  %>
+        <% end %>
 
+      <% end %>
+    </div>
   <% end %>
-<% end %>
-
+</div>
