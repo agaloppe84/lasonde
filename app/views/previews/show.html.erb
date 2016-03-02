@@ -1,7 +1,7 @@
-<div class="container">
+<div id="owl-example" class="owl-carousel">
 
   <% @questions.each do |question| %>
-    <div class="question">
+    <div>
       <h4><%= question.label %></h4>
 
       <% question.iterations.each do |iteration| %>
@@ -10,9 +10,9 @@
 
         <%= simple_form_for [question, iteration, item_answer] do |f| %>
           <%= f.association :item, as: :check_boxes, collection: question.items(order: 'rank'), label_method: :label, label: false, include_hidden: false %>
-          <%= f.button :submit, "Suivant", remote: true, class: "btn btn-primary"  %>
+          <%= f.button :submit, "Suivant", remote: true, class: "btn btn-primary owl-next"  %>
         <% end %>
-
+        <a href="" class="btn btn-primary owl-next"></a>
       <% end %>
     </div>
   <% end %>
