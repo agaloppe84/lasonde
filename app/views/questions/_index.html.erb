@@ -1,4 +1,6 @@
-<%= link_to "Add a question", new_survey_question_path(@survey) %>
+<% if policy(Question).create? %>
+  <%= link_to "Add a question", new_survey_question_path(@survey) %>
+<% end %>
 <ul class="nav nav-pills nav-stacked col-md-3" >
   <% @questions.each_with_index do |question, index| %>
     <li><a href="#<%=index.to_s %>"data-toggle="pill">
