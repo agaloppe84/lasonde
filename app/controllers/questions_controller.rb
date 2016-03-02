@@ -34,6 +34,13 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
+    @rank = @question.rank
+    @survey.questions.each do |question|
+      if question.rank > @rank
+        question.rank -= 1
+        question.save
+      end
+    end
     @question.destroy
     redirect_to survey_path(@survey)
   end
