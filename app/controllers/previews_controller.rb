@@ -1,5 +1,9 @@
 class PreviewsController < ApplicationController
+  before_action :set_survey, only: [:show]
+
   def show
+    @questions = @survey.questions
+
   end
 
   private

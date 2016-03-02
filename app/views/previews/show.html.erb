@@ -1,1 +1,11 @@
-<%= render "questions/index", survey: @survey %>
+<% @questions.each do |question| %>
+  <% question.iterations.each do |iteration| %>
+    <h4><%= question.label %></h4>
+    <% @answer = iteration.answers.new %>
+
+    <%= simple_form_for [iteration, @answer] do |f| %>
+      <%= f.input :item_id %>
+    <% end %>
+
+  <% end %>
+<% end %>
