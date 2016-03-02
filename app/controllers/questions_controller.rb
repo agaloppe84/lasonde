@@ -5,7 +5,6 @@ class QuestionsController < ApplicationController
   def new
     @question = @survey.questions.new
     authorize @question
-    @question.iterations.create(number: 1)
   end
 
   def create
@@ -13,6 +12,7 @@ class QuestionsController < ApplicationController
     @question.rank = @survey.questions.count + 1
     authorize @question
     if @question.save
+      @question.iterations.create(number: 1)
       redirect_to survey_path(@survey)
     else
       render :new

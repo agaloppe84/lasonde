@@ -9,7 +9,14 @@ Rails.application.routes.draw do
 
   resources :questions, only: [] do
     resources :items, only: [ :new, :create, :edit, :update, :destroy ]
+    resources :iterations, only: [] do
+      resources :item_answers, only: [:create]
+    end
   end
+
+  resources :previews, only: [ :show ]
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
