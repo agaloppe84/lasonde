@@ -2,5 +2,5 @@
 
 <%= render "questions/index", survey: @survey %>
 
-
+<%= link_to "Prévisualiser mon étude", preview_path(@survey) %>
 <%= link_to "Mes études", surveys_path %>
