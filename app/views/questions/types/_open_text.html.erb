@@ -1,0 +1,7 @@
+<h4 class="text-center">Open text</h4>
+
+<%= simple_form_for [@survey, @question] do |f| %>
+  <%= f.input :label, placeholder: 'Your question here' %>
+  <%= f.input :kind, as: :hidden, input_html: {value: params[:question_type]} %>
+  <%= f.button :submit %>
+<% end %>

@@ -9,7 +9,7 @@ class Question < ActiveRecord::Base
   validate :number_of_questions_cannot_excess_ten
 
   def self.kinds
-    ["single", "multi", "open-text", "stars", "open-numeric", "slider", "grid-single", "grid-multi"]
+    ["single", "multi", "open_text", "stars", "open_numeric", "slider", "grid_single", "grid_multi"]
   end
 
   def kind_is_in_kinds
