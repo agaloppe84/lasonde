@@ -1,1 +1,7 @@
-<h1>Je suis des stars</h1>
+<h4 class="text-center">Stars</h4>
+
+<%= simple_form_for [@survey, @question] do |f| %>
+  <%= f.input :label, placeholder: 'Your question here' %>
+  <%= f.input :kind, as: :hidden, input_html: {value: params[:question_type]} %>
+  <%= f.button :submit %>
+<% end %>
