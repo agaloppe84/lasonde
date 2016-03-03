@@ -2,7 +2,7 @@
 
 <%= render "questions/index", survey: @survey %>
 
-# <%= link_to "Prévisualiser mon étude", preview_path(@survey) %>
+<%= link_to "Mes études", surveys_path %>
 <button class="preview-open btn btn-primary" data-toggle="modal" data-target="#preview-open">Prévisualiser l'étude</button>
 
 
@@ -15,7 +15,7 @@
       </div>
       <div class="modal-body">
 
-        <%= render 'previews/show', survey: @survey %>
+        <%= render 'preview', survey: @survey %>
 
       </div>
     </div><!-- /.modal-content -->
