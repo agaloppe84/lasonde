@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
 
   def new
     @question = @survey.questions.new
+    @question_type = params[:question_type]
     authorize @question
   end
 
@@ -15,6 +16,7 @@ class QuestionsController < ApplicationController
       @question.iterations.create(number: 1)
       redirect_to survey_path(@survey)
     else
+      @question_type = @question.kind
       render :new
     end
   end
