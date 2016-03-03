@@ -1,0 +1,10 @@
+<h4><%= question.label %></h4>
+
+<% question.iterations.each do |iteration| %>
+  <% numeric_answer = NumericAnswer.new %>
+
+  <%= simple_form_for([question, iteration, numeric_answer], remote: true) do |f| %>
+    <%= f.input :content, label_method: :label, label: false, include_hidden: false %>
+    <%= f.button :submit, ">>", class: "btn btn-primary", "data-slide" => "next"  %>
+  <% end %>
+<% end %>

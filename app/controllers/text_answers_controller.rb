@@ -1,10 +1,10 @@
-class NumericAnswersController < ApplicationController
+class TextAnswersController < ApplicationController
   def create
     @iteration = Iteration.find(params[:iteration_id])
-    @numeric_answer = NumericAnswer.new(content: numeric_answer_params[:content], respondent_id: numeric_answer_params[:respondent_id])
-    authorize @numeric_answer
-    if @numeric_answer.save
-      @iteration.answers << @numeric_answer
+    @text_answer = TextAnswer.new(content: text_answer_params[:content], respondent_id: text_answer_params[:respondent_id])
+    authorize @text_answer
+    if @text_answer.save
+      @iteration.answers << @text_answer
     end
     authorize @iteration.question
     respond_to do |format|
@@ -15,7 +15,7 @@ class NumericAnswersController < ApplicationController
 
   private
 
-  def numeric_answer_params
+  def text_answer_params
     params.require(:numeric_answer).permit(:respondent_id, :content)
   end
 end

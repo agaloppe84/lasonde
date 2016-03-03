@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :iterations, only: [] do
       resources :item_answers, only: [:create]
       resources :numeric_answers, only: [:create]
+      resources :text_answers, only: [:create]
     end
   end
 
