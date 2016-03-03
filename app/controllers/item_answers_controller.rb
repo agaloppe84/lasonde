@@ -34,6 +34,8 @@ class ItemAnswersController < ApplicationController
     authorize @item_answer
     if @item_answer.save
       @iteration.answers << @item_answer
+    else
+      @alert = "ça marche pas bien"
     end
   end
 end

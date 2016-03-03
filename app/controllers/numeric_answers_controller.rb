@@ -5,6 +5,8 @@ class NumericAnswersController < ApplicationController
     authorize @numeric_answer
     if @numeric_answer.save
       @iteration.answers << @numeric_answer
+    else
+      @alert = "ça marche pas bien"
     end
     authorize @iteration.question
     respond_to do |format|

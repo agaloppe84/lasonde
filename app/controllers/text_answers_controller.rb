@@ -5,6 +5,8 @@ class TextAnswersController < ApplicationController
     authorize @text_answer
     if @text_answer.save
       @iteration.answers << @text_answer
+    else
+      @alert = "ça marche pas bien"
     end
     authorize @iteration.question
     respond_to do |format|
@@ -16,6 +18,6 @@ class TextAnswersController < ApplicationController
   private
 
   def text_answer_params
-    params.require(:numeric_answer).permit(:respondent_id, :content)
+    params.require(:text_answer).permit(:respondent_id, :content)
   end
 end
