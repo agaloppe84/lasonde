@@ -5,9 +5,7 @@ class ItemAnswersController < ApplicationController
     @item_id = item_answer_params[:item_id]
     if check_items
       if @item_id.kind_of?(Array)
-        @item_id.each do |item_id|
-          create_item_answer(item_id)
-        end
+        @item_id.each  {|item_id| create_item_answer(item_id) }
       else
         create_item_answer(@item_id)
       end
