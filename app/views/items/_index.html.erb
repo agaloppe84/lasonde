@@ -1,9 +1,11 @@
-<ul>
+<ul class="list-unstyled" style=" word-wrap: break-word;">
   <% question.items.each do |item| %>
     <li>
       <% if policy(item).show? %>
         <%= "(#{item.rank}) #{item.label}" %>
       <% end %>
+    </li>
+    <li>
       <% if policy(item).update? %>
         <%= link_to "Edit", edit_question_item_path(question, item) %>
       <% end %>
