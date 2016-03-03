@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302164132) do
+ActiveRecord::Schema.define(version: 20160303124031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,8 +80,10 @@ ActiveRecord::Schema.define(version: 20160302164132) do
   create_table "surveys", force: :cascade do |t|
     t.string   "title"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "target",     default: "nat rep"
+    t.string   "country",    default: "France"
   end
 
   add_index "surveys", ["user_id"], name: "index_surveys_on_user_id", using: :btree
