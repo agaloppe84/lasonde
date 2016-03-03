@@ -5,6 +5,6 @@ class PagesController < ApplicationController
   skip_after_action :verify_policy_scoped, only: :home, unless: :devise_controller?
 
   def home
-
+    render layout: 'home'
   end
 end
