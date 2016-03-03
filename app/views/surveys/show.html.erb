@@ -1,8 +1,7 @@
-<%= @survey.title %>
-
+<div class="row">
+<h3><%= @survey.title %></h3>
+</div>
 <%= render "questions/index", survey: @survey %>
-
-<%= link_to "Mes études", surveys_path %>
 <button class="preview-open btn btn-primary" data-toggle="modal" data-target="#preview-open">Prévisualiser l'étude</button>
 
 
@@ -16,7 +15,6 @@
       <div class="modal-body">
 
         <%= render 'preview', survey: @survey %>
-
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
