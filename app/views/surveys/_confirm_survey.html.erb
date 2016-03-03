@@ -1,0 +1,19 @@
+<h2>Récapitulatif de l'étude</h2>
+
+<p><%= @survey.title %></p>
+<div>
+  <p>Cible : <%= @survey.target %></p>
+  <p>Pays : <%= @survey.country %></p>
+  <p>Questionnaire : <%= pluralize(@survey.questions.count, "question") %></p>
+</div>
+
+
+<%= simple_form_for(@survey, remote: true)  do |f| %>
+  <%= f.input :sample_size %>
+  <%= f.button :submit, "Actualiser le prix" %>
+<% end %>
+<div id="survey-price">
+  <p>Prix: <%= @price %> €</p>
+</div>
+
+<button class="btn btn-primary">Commander</button>
