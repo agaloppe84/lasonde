@@ -1,18 +1,16 @@
 /* Main class */
 .navbar-wagon {
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
-  transition: all 0.3s ease;
   display: flex;
   height: 70px;
   padding: 0px 30px;
   align-items: center;
   justify-content: space-between;
+  background: transparent;
 }
 
 /* Optional class to fix the navbar on top */
-.navbar-wagon-fixed {
-  position: fixed;
+#nav-wrapper.affix  {
+  background-color: #fff;
   left: 0px;
   top: 0px;
   z-index: 1;
@@ -50,19 +48,17 @@
 
 /* Navbar right button */
 .navbar-wagon-button {
-  margin-left: 10px;
-  padding: 0 20px;
-  border-radius: 20em;
-  line-height: 40px;
-  background-color: #D23333;
-  color: white;
-  font-size: 14px;
-  border: 2px solid #D23333;
+  color: #FFF;
+  border: 1px solid #999999;
+  padding: 10px 15px;
+  border-radius: 50px;
+  opacity: 1;
 }
 .navbar-wagon-button:hover {
-  color: white;
-  background: #D23333;
-  border-color: #ac2626;
+  opacity: 0.6;
+  font-weight: lighter;
+  text-decoration: none;
+  color: #999999;
 }
 
 /* Navbar search form */
@@ -129,12 +125,13 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
-#nav-wrapper.affix {
-    top: 0;
-    width: 100%;
-}
 #nav-wrapper.affix > #nav.navbar-wagon {
-  background-color: rgba(0,0,0,0.5);
-  transition: all 0.3s ease;
+  background: #fff;
+  transition: all 0.3s ease .15s;
   height: 70px;
 }
+#nav-wrapper.affix > #nav.navbar-wagon a.navbar-wagon-item.navbar-wagon-button.btn{
+  background: $red;
+  border: $red;
+}
+
