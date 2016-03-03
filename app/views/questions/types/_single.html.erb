@@ -3,7 +3,6 @@
 <%= simple_form_for [@survey, @question] do |f| %>
   <%= f.input :label %>
   <%= f.input :kind, as: :hidden, input_html: {value: params[:question_type]} %>
-  <%= f.input :items, collection: 2..10 %>
  <div class="text-center"><%= f.button :submit %></div>
 <% end %>
 </div>
