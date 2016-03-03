@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :items, only: [ :new, :create, :edit, :update, :destroy ]
     resources :iterations, only: [] do
       resources :item_answers, only: [:create]
+      resources :numeric_answers, only: [:create]
     end
   end
 

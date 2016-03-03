@@ -1,0 +1,7 @@
+<% if @alert.present? %>
+  // Render new review form with errors
+  $('#flashes').html("<%= j render 'shared/flashes', alert: @alert %>");
+<% else %>
+  $('.carousel').carousel('next');
+  $('#flashes .alert').slideUp();
+<% end %>
