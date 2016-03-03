@@ -4,6 +4,7 @@ class Survey < ActiveRecord::Base
   validates :title, presence: true, allow_blank: false
   validates :target, presence: true, allow_blank: false
   validates :country, presence: true, allow_blank: false
+  validates :sample_size, numericality: { only_integer: true }
 
 
   def self.targets
