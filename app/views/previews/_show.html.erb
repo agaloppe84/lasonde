@@ -1,4 +1,5 @@
 
+
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false" data-keyboard="false">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -19,10 +20,16 @@
 
           <%= simple_form_for([question, iteration, item_answer], remote: true) do |f| %>
             <%= f.association :item, as: :check_boxes, collection: question.items(order: 'rank'), label_method: :label, label: false, include_hidden: false %>
-            <%= f.button :submit, "Suivant", class: "btn btn-primary", "data-slide" => "next"  %>
+            <%= f.button :submit, ">>", class: "btn btn-primary", "data-slide" => "next"  %>
           <% end %>
         <% end %>
       </div>
     <% end %>
+    <div class="item">
+      <p>Ce questionnaire est maintenant terminé. Merci d'avoir pris le temps de répondre</p>
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer cette page</button>
+    </div>
   </div>
 </div>
+
+
