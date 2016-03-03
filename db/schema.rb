@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 20160303150812) do
     t.datetime "updated_at",                      null: false
     t.string   "target",      default: "nat rep"
     t.string   "country",     default: "France"
-    t.integer  "sample_size"
+    t.integer  "sample_size", default: 50
   end
 
   add_index "surveys", ["user_id"], name: "index_surveys_on_user_id", using: :btree
