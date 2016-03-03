@@ -8,7 +8,7 @@ class SurveysController < ApplicationController
   def show
     @questions = @survey.questions
     @item_answer = ItemAnswer.new
-    calculate_price(@survey) if @survey.sample_size
+    calculate_price(@survey)
   end
 
   def new
@@ -31,7 +31,7 @@ class SurveysController < ApplicationController
 
   def update
     if @survey.update(survey_params)
-      calculate_price(@survey) if @survey.sample_size
+      calculate_price(@survey)
     else
       @alert = "ça marche pas bien"
     end
