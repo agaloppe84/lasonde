@@ -129,3 +129,12 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+#nav-wrapper.affix {
+    top: 0;
+    width: 100%;
+}
+#nav-wrapper.affix > #nav.navbar-wagon {
+  background-color: rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+  height: 70px;
+}
