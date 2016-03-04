@@ -6,22 +6,23 @@
   align-items: center;
   justify-content: space-between;
   background: transparent;
+  transition: all 0.4s ease;
 }
-
-/* Optional class to fix the navbar on top */
-#nav-wrapper.affix  {
-  background-color: #fff;
-  left: 0px;
-  top: 0px;
-  z-index: 1;
-  width: 100%;
+#nav.navbar-wagon.scroll {
+  background: #FFF;
+  height: 50px;
 }
-
+#nav2.navbar-wagon.scroll {
+  background: #FFF;
+  height: 50px;
+}
+.navbar-margin {
+  margin-bottom: 20px 0;
+}
 /* Navbar logo */
 .navbar-wagon-brand img {
   width: 50px;
 }
-
 /* Navbar right section (with form, links, button) */
 .navbar-wagon-right {
   display: flex;
@@ -60,6 +61,7 @@
   text-decoration: none;
   color: #999999;
 }
+
 
 /* Navbar search form */
 .navbar-wagon-search {
@@ -125,13 +127,3 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
-#nav-wrapper.affix > #nav.navbar-wagon {
-  background: #fff;
-  transition: all 0.3s ease .15s;
-  height: 70px;
-}
-#nav-wrapper.affix > #nav.navbar-wagon a.navbar-wagon-item.navbar-wagon-button.btn{
-  background: $red;
-  border: $red;
-}
-

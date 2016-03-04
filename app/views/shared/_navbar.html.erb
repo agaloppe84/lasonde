@@ -1,5 +1,4 @@
-<div id="nav-wrapper" data-spy="affix" data-offset-top="250">
-  <div class="navbar-wagon" id="nav" >
+  <div id="nav2" class="navbar-wagon navbar-margin " >
     <!-- Logo -->
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.png" %>
@@ -45,7 +44,7 @@
       <!-- Login text link -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <!-- Button (call-to-action) -->
-      <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+      <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", id:"button-nav", class: "navbar-wagon-item navbar-wagon-button btn" %>
       <% end %>
     </div>
     <!-- Dropdown list appearing on mobile only -->
@@ -57,13 +56,11 @@
           <li><%= link_to "Profile", user_session %></li>
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Log out", destroy_user_session_path %></li>
-        <% else %>
+          <% else %>
           <li><%= link_to "Sign up", new_user_registration_path %></li>
           <li><%= link_to "Login", new_user_session_path %></li>
           <% end %>
-          </ul>
-        </div>
+        </ul>
       </div>
     </div>
-  </div>
   </div>
