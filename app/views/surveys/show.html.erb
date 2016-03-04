@@ -12,7 +12,7 @@
 
 <div>
   <div class="bc-content hidden" id="new-survey">
-    To do add partial
+    <%= render 'survey_form' %>
   </div>
   <div class="bc-content active" id="show-survey">
     <div class="row">
@@ -21,7 +21,7 @@
     <%= render "questions/index", survey: @survey %>
   </div>
   <div class="bc-content hidden" id="confirm-survey">
-      <%= render 'confirm_survey', survey: @survey, price: @price %>
+    <%= render 'confirm_survey', survey: @survey, price: @price %>
   </div>
   <% if @survey.questions.count > 0 %>
     <button class="preview-open btn btn-primary" data-toggle="modal" data-target="#preview-open">Prévisualiser l'étude</button>

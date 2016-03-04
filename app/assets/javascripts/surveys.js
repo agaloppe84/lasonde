@@ -1,6 +1,7 @@
 $(function(){
   $(".item:first").addClass('active');
 });
+
 $(function(){
   $(".bc").on("click", function(e){
     $('.active').toggleClass('active');
