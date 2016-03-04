@@ -1,10 +1,11 @@
-<ul id="question-items" class="list-unstyled" style=" word-wrap: break-word;">
+<ul id="question-items-<%= question.rank %>" class="list-unstyled" style=" word-wrap: break-word;">
   <% question.items.each do |item| %>
     <%= render 'items/item', question: question, item: item %>
   <% end %>
 </ul>
 
 <% if policy(Item).create? %>
+
   <%= render 'items/item_form', question: question, item: @item %>
   <%= link_to "Add an item",  new_question_item_path(question) %>
 <% end %>

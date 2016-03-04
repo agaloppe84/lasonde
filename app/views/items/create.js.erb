@@ -1,4 +1,4 @@
 $item = $('<%= j render "items/item", question: @question, item: @item %>').hide();
-$('#question-items').append($item);
+$('#question-items-<%= @question.rank %>').append($item);
 $item.slideDown();
 $('#item_label').val('');
