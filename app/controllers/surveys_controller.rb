@@ -8,6 +8,7 @@ class SurveysController < ApplicationController
   def show
     @questions = @survey.questions
     @item_answer = ItemAnswer.new
+    calculate_price(@survey)
   end
 
   def new
@@ -30,9 +31,13 @@ class SurveysController < ApplicationController
 
   def update
     if @survey.update(survey_params)
-      redirect_to survey_path(@survey)
+      calculate_price(@survey)
     else
-      render :edit
+      @alert = "ça marche pas bien"
+    end
+    respond_to do |format|
+      format.html { survey_path(@survey) }
+      format.js
     end
   end
 
@@ -49,6 +54,10 @@ class SurveysController < ApplicationController
   end
 
   def survey_params
-    params.require(:survey).permit(:title)
+    params.require(:survey).permit(:title, :target, :country, :sample_size)
+  end
+
+  def calculate_price(survey)
+    @price = (survey.sample_size * survey.questions.count)
   end
 end
