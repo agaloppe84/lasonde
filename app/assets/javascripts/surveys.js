@@ -1,7 +1,7 @@
 $(function(){
   $(".bc").on("click", function(e){
-    $('.active').toggleClass('active');
-    $(this).toggleClass('active');
+    $('.active-bc').toggleClass('active-bc');
+    $(this).toggleClass('active-bc');
     $('.bc-content').addClass('hidden');
     $($(this).data("target")).removeClass('hidden');
   });
