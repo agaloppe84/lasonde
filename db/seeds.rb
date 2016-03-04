@@ -76,8 +76,8 @@ quest05 = Question.create(survey: survey01 , label: "Quel est le ..... ?" , kind
 quest06 = Question.create(survey: survey01 , label: "Quel est le ..... ?" , kind: "stars" , rank: 6)
 quest07 = Question.create(survey: survey01 , label: "Quel est le ..... ?" , kind: "stars" , rank: 7)
 quest08 = Question.create(survey: survey01 , label: "Quel est le ..... ?" , kind: "single" , rank: 8)
-quest09 = Question.create(survey: survey01 , label: "Quel est le ..... ?" , kind: "opentext" ,    rank: 9)
-quest10 = Question.create(survey: survey01 , label: "Quel est le ..... ?" , kind: "opentext" ,    rank: 10)
+quest09 = Question.create(survey: survey01 , label: "Quel est le ..... ?" , kind: "open_text" ,    rank: 9)
+quest10 = Question.create(survey: survey01 , label: "Quel est le ..... ?" , kind: "open_text" ,    rank: 10)
 
 
 quest11 = Question.create(survey: survey02 , label: "Quel est le ..... ?" , kind: "single" , rank: 1)
@@ -88,8 +88,8 @@ quest15 = Question.create(survey: survey02 , label: "Quel est le ..... ?" , kind
 quest16 = Question.create(survey: survey02 , label: "Quel est le ..... ?" , kind: "single" , rank: 6)
 quest17 = Question.create(survey: survey02 , label: "Quel est le ..... ?" , kind: "single" , rank: 7)
 quest18 = Question.create(survey: survey02 , label: "Quel est le ..... ?" , kind: "single" , rank: 8)
-quest19 = Question.create(survey: survey02 , label: "Quel est le ..... ?" , kind: "opentext" ,    rank: 9)
-quest20 = Question.create(survey: survey02 , label: "Quel est le ..... ?" , kind: "opentext" ,    rank: 10)
+quest19 = Question.create(survey: survey02 , label: "Quel est le ..... ?" , kind: "open_text" ,    rank: 9)
+quest20 = Question.create(survey: survey02 , label: "Quel est le ..... ?" , kind: "open_text" ,    rank: 10)
 
 
 
@@ -101,8 +101,8 @@ quest25 = Question.create(survey: survey03 , label: "Quel est le ..... ?" , kind
 quest26 = Question.create(survey: survey03 , label: "Quel est le ..... ?" , kind: "single" , rank: 6)
 quest27 = Question.create(survey: survey03 , label: "Quel est le ..... ?" , kind: "single" , rank: 7)
 quest28 = Question.create(survey: survey03 , label: "Quel est le ..... ?" , kind: "single" , rank: 8)
-quest29 = Question.create(survey: survey03 , label: "Quel est le ..... ?" , kind: "opentext" ,    rank: 9)
-quest30 = Question.create(survey: survey03 , label: "Quel est le ..... ?" , kind: "opentext" ,    rank: 10)
+quest29 = Question.create(survey: survey03 , label: "Quel est le ..... ?" , kind: "open_text" ,    rank: 9)
+quest30 = Question.create(survey: survey03 , label: "Quel est le ..... ?" , kind: "open_text" ,    rank: 10)
 
 
 
@@ -114,8 +114,8 @@ quest35 = Question.create(survey: survey04 , label: "Quel est le ..... ?" , kind
 quest36 = Question.create(survey: survey04 , label: "Quel est le ..... ?" , kind: "single" , rank: 6)
 quest37 = Question.create(survey: survey04 , label: "Quel est le ..... ?" , kind: "single" , rank: 7)
 quest38 = Question.create(survey: survey04 , label: "Quel est le ..... ?" , kind: "single" , rank: 8)
-quest39 = Question.create(survey: survey04 , label: "Quel est le ..... ?" , kind: "opentext" ,    rank: 9)
-quest40 = Question.create(survey: survey04 , label: "Quel est le ..... ?" , kind: "opentext" ,    rank: 10)
+quest39 = Question.create(survey: survey04 , label: "Quel est le ..... ?" , kind: "open_text" ,    rank: 9)
+quest40 = Question.create(survey: survey04 , label: "Quel est le ..... ?" , kind: "open_text" ,    rank: 10)
 
 
 quest41 = Question.create(survey: survey05 , label: "Quel est le ..... ?" , kind: "single" , rank: 1)
@@ -126,8 +126,8 @@ quest45 = Question.create(survey: survey05 , label: "Quel est le ..... ?" , kind
 quest46 = Question.create(survey: survey05 , label: "Quel est le ..... ?" , kind: "single" , rank: 6)
 quest47 = Question.create(survey: survey05 , label: "Quel est le ..... ?" , kind: "single" , rank: 7)
 quest48 = Question.create(survey: survey05 , label: "Quel est le ..... ?" , kind: "single" , rank: 8)
-quest49 = Question.create(survey: survey05 , label: "Quel est le ..... ?" , kind: "opentext" ,    rank: 9)
-quest50 = Question.create(survey: survey05 , label: "Quel est le ..... ?" , kind: "opentext" ,    rank: 10)
+quest49 = Question.create(survey: survey05 , label: "Quel est le ..... ?" , kind: "open_text" ,    rank: 9)
+quest50 = Question.create(survey: survey05 , label: "Quel est le ..... ?" , kind: "open_text" ,    rank: 10)
 
 
 
@@ -139,8 +139,8 @@ quest55 = Question.create(survey: survey06 , label: "Quel est le ..... ?" , kind
 quest56 = Question.create(survey: survey06 , label: "Quel est le ..... ?" , kind: "single" , rank: 6)
 quest57 = Question.create(survey: survey06 , label: "Quel est le ..... ?" , kind: "single" , rank: 7)
 quest58 = Question.create(survey: survey06 , label: "Quel est le ..... ?" , kind: "single" , rank: 8)
-quest59 = Question.create(survey: survey06 , label: "Quel est le ..... ?" , kind: "opentext" ,    rank: 9)
-quest60 = Question.create(survey: survey06 , label: "Quel est le ..... ?" , kind: "opentext" ,    rank: 10)
+quest59 = Question.create(survey: survey06 , label: "Quel est le ..... ?" , kind: "open_text" ,    rank: 9)
+quest60 = Question.create(survey: survey06 , label: "Quel est le ..... ?" , kind: "open_text" ,    rank: 10)
 
 
 puts "Seeding QUESTIONS done"
