@@ -1,9 +1,22 @@
-<div class="row">
-<h3><%= @survey.title %></h3>
-</div>
-<%= render "questions/index", survey: @survey %>
-<button class="preview-open btn btn-primary" data-toggle="modal" data-target="#preview-open">Prévisualiser l'étude</button>
+<%= render "breadcrumb" %>
 
+<div>
+  <div class="bc-content hidden" id="new-survey">
+    <%= render 'survey_form' %>
+  </div>
+  <div class="bc-content active" id="show-survey">
+    <div class="row">
+      <h3><%= @survey.title %></h3>
+    </div>
+    <%= render "questions/index", survey: @survey %>
+  </div>
+  <div class="bc-content hidden" id="confirm-survey">
+    <%= render 'confirm_survey', survey: @survey, price: @price %>
+  </div>
+  <% if @survey.questions.count > 0 %>
+    <button class="preview-open btn btn-primary" data-toggle="modal" data-target="#preview-open">Prévisualiser l'étude</button>
+  <% end %>
+</div>
 
 <div class="modal fade" tabindex="-1" role="dialog" id="preview-open">
   <div class="modal-dialog modal-lg">
@@ -13,17 +26,8 @@
         <h4 class="modal-title"><%= @survey.title %></h4>
       </div>
       <div class="modal-body">
-
         <%= render 'preview', survey: @survey %>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-
-<div id="confirm-survey">
-  <%= render 'confirm_survey', survey: @survey, price: @price %>
-</div>
-
-
-
-
