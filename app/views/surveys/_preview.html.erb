@@ -9,16 +9,18 @@
 
         <div id="preview-carousel" class="carousel slide" data-ride="carousel" data-interval="false" data-keyboard="false">
           <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <% @questions.each_with_index do |question, index| %>
-              <li data-target="#preview-carousel" data-slide-to="<%= index %>" class="active"></li>
-            <% end %>
-          </ol>
+
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
             <% @questions.each do |question| %>
               <div class="item">
+
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="<%= (question.rank.to_f / @questions.count.to_f) * 100 %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= (question.rank.to_f / @questions.count.to_f) * 100 %>%;">
+                  <%= "#{question.rank} sur #{@questions.count}" %>
+                </div>
+              </div>
 
               <%= render "questions/types_thomas/#{question.kind}", question: question %>
 
