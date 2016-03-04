@@ -4,7 +4,11 @@
         <%= f.input :title, label: "Titre de l'étude"  %>
         <%= f.input :target, collection: [ ["Ensemble de la population","nat rep"] ], include_blank: false, input_html: { readonly: "readonly" }, label: "Population à interroger" %>
         <%= f.input :country, collection: Survey.countries, include_blank: false, input_html: { readonly: "readonly" }, label: "Pays" %>
-        <%= f.button :submit, "Suivant", class: "btn btn-primary" %>
+        <% if @survey.id %>
+          <%= f.button :submit, "Actualiser", class: "btn btn-primary" %>
+        <% else %>
+          <%= f.button :submit, "Suivant", class: "btn btn-primary" %>
+        <% end %>
       <% end %>
     </div>
   </div>
