@@ -8,6 +8,12 @@ class Question < ActiveRecord::Base
   validate :kind_is_in_kinds
   validate :number_of_questions_cannot_excess_ten
 
+  attr_accessor :steps
+  attr_accessor :response
+  attr_accessor :question
+
+
+
   def self.kinds
     ["single", "multi", "open_text", "stars", "open_numeric", "slider", "grid_single", "grid_multi"]
   end

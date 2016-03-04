@@ -2,6 +2,8 @@
 
 <%= simple_form_for [@survey, @question] do |f| %>
   <%= f.input :label, placeholder: 'Your question here' %>
+  <%= f.input :steps, collection: 1..6 %>
+  <%= f.input :response, collection: ["nombre", "texte"], as: :check_boxes %>
   <%= f.input :kind, as: :hidden, input_html: {value: params[:question_type]} %>
   <%= f.button :submit %>
 <% end %>

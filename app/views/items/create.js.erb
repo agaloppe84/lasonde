@@ -1,0 +1,4 @@
+$item = $('<%= j render "items/item", question: @question, item: @item %>').hide();
+$('#question-items').append($item);
+$item.slideDown();
+$('#item_label').val('');

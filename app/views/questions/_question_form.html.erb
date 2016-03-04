@@ -1,5 +1,4 @@
 <%= simple_form_for [@survey, @question] do |f| %>
   <%= f.input :label %>
-  <%= f.input :kind, collection: Question.kinds %>
   <%= f.button :submit %>
 <% end %>
