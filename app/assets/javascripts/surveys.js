@@ -1,8 +1,4 @@
 $(function(){
-  $(".item:first").addClass('active');
-});
-
-$(function(){
   $(".bc").on("click", function(e){
     $('.active').toggleClass('active');
     $(this).toggleClass('active');
@@ -12,4 +8,6 @@ $(function(){
 
   var hash = window.location.hash;
   $('.bc a[data-target="'+hash+'"]').click()
+
+  $(".item:first").addClass('active');
 });
