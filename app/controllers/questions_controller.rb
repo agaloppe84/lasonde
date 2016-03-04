@@ -6,6 +6,10 @@ class QuestionsController < ApplicationController
     @question = @survey.questions.new
     @question_type = params[:question_type]
     authorize @question
+    respond_to do |format|
+      format.html { survey_path(@survey) }
+      format.js
+    end
   end
 
   def create
