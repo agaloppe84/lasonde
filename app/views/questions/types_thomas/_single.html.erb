@@ -1,0 +1,11 @@
+<h4><%= question.label %></h4>
+
+<% question.iterations.each do |iteration| %>
+  <% answer = iteration.answers.new %>
+  <% item_answer = ItemAnswer.new %>
+
+  <%= simple_form_for([question, iteration, item_answer], remote: true) do |f| %>
+    <%= f.association :item, as: :radio_buttons, collection: question.items(order: 'rank'), label_method: :label, label: false, include_hidden: false %>
+    <%= f.button :submit, ">>", class: "btn btn-primary", "data-slide" => "next"  %>
+  <% end %>
+<% end %>
