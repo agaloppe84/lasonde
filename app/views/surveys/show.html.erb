@@ -1,14 +1,4 @@
-<ol class="breadcrumb">
-  <li>
-    <%= link_to "Périmètre", "#new-survey", class: "bc", "data-target" => "#new-survey" %>
-  </li>
-  <li>
-    <%= link_to "Questionnaire", "#show-survey", class: "bc active", "data-target" => "#show-survey" %>
-  </li>
-  <li>
-    <%= link_to "Confirmer l'étude", "#confirm-survey", class: "bc", "data-target" => "#confirm-survey" %>
-  </li>
-</ol>
+<%= render "breadcrumb" %>
 
 <div>
   <div class="bc-content hidden" id="new-survey">
