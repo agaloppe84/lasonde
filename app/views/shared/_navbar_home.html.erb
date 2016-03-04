@@ -1,6 +1,5 @@
 <div class="banner" style="background: linear-gradient(to left, rgba(35,37,38,0.5), rgba(65,67,69,0.5)), url('tof.jpeg');background-size: cover">
-<div id="nav-wrapper" data-spy="affix" data-offset-top="250">
-  <div class="navbar-wagon" id="nav" >
+  <div  id="nav" class="navbar-wagon navbar-fixed-top" >
     <!-- Logo -->
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.png" %>
@@ -46,7 +45,7 @@
       <!-- Login text link -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <!-- Button (call-to-action) -->
-      <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+      <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", id:"button-nav", class: "navbar-wagon-item navbar-wagon-button btn" %>
       <% end %>
     </div>
     <!-- Dropdown list appearing on mobile only -->
@@ -58,17 +57,16 @@
           <li><%= link_to "Profile", user_session %></li>
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Log out", destroy_user_session_path %></li>
-        <% else %>
+          <% else %>
           <li><%= link_to "Sign up", new_user_registration_path %></li>
           <li><%= link_to "Login", new_user_session_path %></li>
 
-        <% end %>
+          <% end %>
         </ul>
       </div>
     </div>
   </div>
-</div>
-  <div class="banner-content text-center title">
+    <div class="banner-content text-center title">
     <h1>Pages#home</h1>
     <p>Very cool stuff, useful and smart</p>
     <a class="btn btn-danger btn-lg">DO SOMETHING HERE</a>
