@@ -7,6 +7,7 @@ class SurveysController < ApplicationController
 
   def show
     @questions = @survey.questions
+    @item = Item.new
     @item_answer = ItemAnswer.new
     calculate_price(@survey)
   end

@@ -11,8 +11,13 @@ class ItemsController < ApplicationController
     @item = @question.items.build(item_params)
     @item.rank = @question.items.count + 1
     authorize @item
+
+
     if @item.save
-      redirect_to survey_path(@question.survey)
+      respond_to do |format|
+        format.html { redirect_to survey_path(@question.survey) }
+        format.js # render create.js
+      end
     else
       render :new
     end

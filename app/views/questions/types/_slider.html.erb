@@ -1,7 +1,35 @@
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <style>#slider { margin: 30px; }  </style>
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+</head>
+<body>
+
+<div id="slider"></div>
+
+<script>
+$( "#slider" ).slider({
+  step: 2
+});
+
+$( "#slider" ).slider( "option", "min", 1 );
+$( "#slider" ).slider( "option", "max", 10 );
+
+</script>
+
+
+</body>
+
+
+
 <h4 class="text-center">Slider</h4>
 
 <%= simple_form_for [@survey, @question] do |f| %>
   <%= f.input :label, placeholder: 'Your question here' %>
+  <%= f.input :response, collection: ["nombre", "texte"], as: :radio_buttons %>
+  <%= f.input :steps, collection: 1..6, prompt: "Select your age", selected: 1 %>
   <%= f.input :kind, as: :hidden, input_html: {value: params[:question_type]} %>
   <%= f.button :submit %>
 <% end %>
