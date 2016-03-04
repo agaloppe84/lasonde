@@ -1,6 +1,4 @@
 class Question < ActiveRecord::Base
-
-
   belongs_to :survey
   has_many :iterations, dependent: :destroy
   has_many :items, dependent: :destroy
